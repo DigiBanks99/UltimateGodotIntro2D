@@ -1,0 +1,24 @@
+[gd_scene load_steps=6 format=3 uid="uid://b5fnjxayu4fmu"]
+
+[ext_resource type="Script" path="res://scenes/levels/level.gd" id="1_d2cd4"]
+[ext_resource type="PackedScene" uid="uid://126s60gfoeww" path="res://scenes/objects/toilet.tscn" id="4_d3q11"]
+[ext_resource type="PackedScene" uid="uid://daade127pracd" path="res://scenes/player/player.tscn" id="4_hx1ub"]
+[ext_resource type="PackedScene" uid="uid://cnfw5qs7gflwb" path="res://scenes/objects/bed.tscn" id="5_8gxsh"]
+[ext_resource type="PackedScene" uid="uid://dnjq17be8fb6n" path="res://scenes/enemies/drone.tscn" id="5_vtcx4"]
+
+[node name="Level" type="Node2D"]
+script = ExtResource("1_d2cd4")
+
+[node name="Bed" parent="." instance=ExtResource("5_8gxsh")]
+position = Vector2(831, 189)
+
+[node name="Player" parent="." instance=ExtResource("4_hx1ub")]
+position = Vector2(282, 489)
+
+[node name="Toilet" parent="." instance=ExtResource("4_d3q11")]
+position = Vector2(132, 88)
+scale = Vector2(0.5, 0.5)
+
+[node name="Drone" parent="." instance=ExtResource("5_vtcx4")]
+position = Vector2(160, 233)
+scale = Vector2(0.3, 0.3)
