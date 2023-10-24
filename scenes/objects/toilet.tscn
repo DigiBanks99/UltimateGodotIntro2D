@@ -1,10 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://126s60gfoeww"]
+[gd_scene load_steps=2 format=3 uid="uid://126s60gfoeww"]
 
 [ext_resource type="Texture2D" uid="uid://v5pkr64wdsww" path="res://resources/graphics/objects/toilet.png" id="1_x0tbo"]
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_v4nau"]
-radius = 104.0
-height = 252.0
 
 [node name="Toilet" type="StaticBody2D"]
 
@@ -12,5 +8,5 @@ height = 252.0
 position = Vector2(-2, 8)
 texture = ExtResource("1_x0tbo")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CapsuleShape2D_v4nau")
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-92, -117, -120, -93, -119, -60, -98, 30, -77, 72, -46, 108, -20, 129, -1, 132, 18, 127, 46, 107, 73, 70, 89, 42, 97, 13, 117, -64, 116, -93, 87, -116)

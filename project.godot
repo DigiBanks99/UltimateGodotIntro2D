@@ -21,6 +21,14 @@ gdscript/warnings/unsafe_property_access=1
 gdscript/warnings/unsafe_method_access=1
 gdscript/warnings/unsafe_cast=1
 
+[dotnet]
+
+project/assembly_name="UltimateGodotIntro2D"
+
+[filesystem]
+
+import/blender/enabled=false
+
 [input]
 
 left={
