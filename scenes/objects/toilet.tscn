@@ -3,6 +3,8 @@
 [ext_resource type="Texture2D" uid="uid://v5pkr64wdsww" path="res://resources/graphics/objects/toilet.png" id="1_x0tbo"]
 
 [node name="Toilet" type="StaticBody2D"]
+collision_layer = 4
+collision_mask = 11
 
 [node name="ToiletImage" type="Sprite2D" parent="."]
 position = Vector2(-2, 8)
