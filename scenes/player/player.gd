@@ -44,6 +44,7 @@ func _handle_attack_input() -> void:
 	var player_direction: Vector2 = _get_projectile_direction()
 
 	if Input.is_action_pressed("primary action") and can_laser:
+		$GPUParticles2D.emitting = true
 		laser_fired.emit(selected_marker.global_position, player_direction)
 		can_laser = false
 		laser_timer.start()

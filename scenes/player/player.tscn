@@ -1,10 +1,36 @@
-[gd_scene load_steps=4 format=3 uid="uid://daade127pracd"]
+[gd_scene load_steps=10 format=3 uid="uid://daade127pracd"]
 
 [ext_resource type="Script" path="res://scenes/player/player.gd" id="1_t0ye6"]
 [ext_resource type="Texture2D" uid="uid://u6yayxnsrf2o" path="res://resources/graphics/player/player.png" id="1_xiyts"]
+[ext_resource type="Texture2D" uid="uid://bu3rf10chflrd" path="res://resources/graphics/decals/white.png" id="3_du5dn"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_glms4"]
 radius = 63.0079
+
+[sub_resource type="Gradient" id="Gradient_igf53"]
+colors = PackedColorArray(0, 0.788235, 0.792157, 0.862745, 1, 1, 1, 0.964706)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_5wjcu"]
+gradient = SubResource("Gradient_igf53")
+
+[sub_resource type="Curve" id="Curve_5i017"]
+_data = [Vector2(0.00344828, 0.319134), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_b56tw"]
+curve = SubResource("Curve_5i017")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_qh1eg"]
+particle_flag_disable_z = true
+spread = 15.0
+initial_velocity_min = 1200.0
+initial_velocity_max = 1500.0
+gravity = Vector3(0, 0, 0)
+scale_min = 0.3
+scale_max = 0.5
+scale_curve = SubResource("CurveTexture_b56tw")
+color = Color(0, 0.788235, 0.792157, 0.517647)
+color_ramp = SubResource("GradientTexture1D_5wjcu")
 
 [node name="Player" type="CharacterBody2D"]
 collision_mask = 31
@@ -36,6 +62,15 @@ position = Vector2(133, 11)
 
 [node name="ProjectileStartMarkerRight" type="Marker2D" parent="ProjectileStartPositions"]
 position = Vector2(133, 28)
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+position = Vector2(137, 19)
+emitting = false
+amount = 500
+process_material = SubResource("ParticleProcessMaterial_qh1eg")
+texture = ExtResource("3_du5dn")
+lifetime = 0.2
+one_shot = true
 
 [connection signal="timeout" from="LaserTimer" to="." method="_on_laser_timer_timeout"]
 [connection signal="timeout" from="GrenadeTimer" to="." method="_on_grenade_timer_timeout"]
