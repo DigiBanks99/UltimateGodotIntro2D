@@ -7,7 +7,9 @@ signal grenade_launched(pos: Vector2, dir: Vector2)
 
 var can_grenade: bool = true
 var can_laser: bool = true
-var speed: float = 500
+
+@export var max_speed: int = 500
+@export var speed: int = max_speed
 
 @onready var laser_timer: Timer = $LaserTimer
 @onready var grenade_timer: Timer = $GrenadeTimer
