@@ -1,14 +1,15 @@
-[gd_scene load_steps=2 format=3 uid="uid://126s60gfoeww"]
+[gd_scene load_steps=4 format=3 uid="uid://bw2x8t54ktpsg"]
 
+[ext_resource type="PackedScene" uid="uid://dsnpkj5aeg6l4" path="res://scenes/objects/item_container.tscn" id="1_5q26a"]
 [ext_resource type="Texture2D" uid="uid://v5pkr64wdsww" path="res://resources/graphics/objects/toilet.png" id="1_x0tbo"]
+[ext_resource type="Script" path="res://scenes/objects/toilet.gd" id="2_u5cf7"]
 
-[node name="Toilet" type="StaticBody2D"]
-collision_layer = 4
-collision_mask = 11
+[node name="Toilet" instance=ExtResource("1_5q26a")]
+script = ExtResource("2_u5cf7")
 
-[node name="ToiletImage" type="Sprite2D" parent="."]
-position = Vector2(-2, 8)
+[node name="Sprite2D" parent="." index="0"]
 texture = ExtResource("1_x0tbo")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-polygon = PackedVector2Array(-92, -117, -120, -93, -119, -60, -98, 30, -77, 72, -46, 108, -20, 129, -1, 132, 18, 127, 46, 107, 73, 70, 89, 42, 97, 13, 117, -64, 116, -93, 87, -116)
+[node name="CollisionShape2D" parent="." index="1"]
+scale = Vector2(11.96, 12.68)
+polygon = PackedVector2Array(7.44147, -9.77918, 9.699, -8.20189, 9.699, -5.7571, 8.94649, -4.81073, 8.11037, -0.0788644, 7.77592, 2.4448, 5.68562, 6.23028, 2.17391, 9.22713, 0, 9.85805, -2.17391, 9.14827, -5.01672, 6.38801, -7.44147, 3.3123, -8.3612, 0.0788644, -8.94649, -4.653, -9.86622, -5.83596, -9.86622, -8.04417, -7.52508, -9.70032)
