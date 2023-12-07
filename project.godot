@@ -35,6 +35,10 @@ project/assembly_name="UltimateGodotIntro2D"
 
 import/blender/enabled=false
 
+[gui]
+
+theme/custom="res://scenes/ui/main_theme.tres"
+
 [input]
 
 left={

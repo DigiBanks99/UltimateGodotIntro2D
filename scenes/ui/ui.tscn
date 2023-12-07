@@ -1,0 +1,106 @@
+[gd_scene load_steps=7 format=3 uid="uid://b5k7c8e24x0b"]
+
+[ext_resource type="Theme" uid="uid://wke537phcc1j" path="res://scenes/ui/main_theme.tres" id="1_b6pg3"]
+[ext_resource type="Texture2D" uid="uid://blinru1t3hed5" path="res://resources/graphics/ui/bullet.png" id="1_d7x4i"]
+[ext_resource type="Texture2D" uid="uid://eyakse825osu" path="res://resources/graphics/ui/grenade.png" id="2_hlhp7"]
+[ext_resource type="Texture2D" uid="uid://bl3inj65pc5bd" path="res://resources/graphics/ui/progress_bar/bg.png" id="4_k05lx"]
+[ext_resource type="Texture2D" uid="uid://drskkr2o844rh" path="res://resources/graphics/ui/progress_bar/over.png" id="5_a6s0i"]
+[ext_resource type="Texture2D" uid="uid://k50l8pe6wxwm" path="res://resources/graphics/ui/progress_bar/progress.png" id="6_113pl"]
+
+[node name="UI" type="CanvasLayer"]
+
+[node name="MainMargin" type="MarginContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_b6pg3")
+
+[node name="AmmoCounters" type="Control" parent="MainMargin"]
+layout_mode = 2
+
+[node name="LaserCounter" type="Control" parent="MainMargin/AmmoCounters"]
+layout_mode = 1
+anchor_left = 0.01
+anchor_top = 0.92
+anchor_right = 0.03
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MainMargin/AmmoCounters/LaserCounter"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -4.64
+offset_top = -20.68
+offset_right = 19.08
+offset_bottom = -3.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+alignment = 1
+
+[node name="Label" type="Label" parent="MainMargin/AmmoCounters/LaserCounter/VBoxContainer"]
+layout_mode = 2
+text = "20"
+horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="MainMargin/AmmoCounters/LaserCounter/VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("1_d7x4i")
+expand_mode = 4
+
+[node name="GrenadeCounter" type="Control" parent="MainMargin/AmmoCounters"]
+layout_mode = 1
+anchor_left = 0.06
+anchor_top = 0.92
+anchor_right = 0.08
+anchor_bottom = 1.0
+offset_left = -16.84
+offset_top = -0.679993
+offset_right = -16.84
+offset_bottom = -0.679993
+size_flags_horizontal = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MainMargin/AmmoCounters/GrenadeCounter"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 37.0
+offset_bottom = -8.40002
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+alignment = 1
+
+[node name="Label" type="Label" parent="MainMargin/AmmoCounters/GrenadeCounter/VBoxContainer"]
+layout_mode = 2
+text = "5"
+horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="MainMargin/AmmoCounters/GrenadeCounter/VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("2_hlhp7")
+expand_mode = 4
+
+[node name="PlayerStats" type="Control" parent="MainMargin"]
+layout_mode = 2
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="MainMargin/PlayerStats"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -150.0
+offset_top = -40.0
+offset_right = 150.0
+grow_horizontal = 2
+grow_vertical = 0
+texture_under = ExtResource("4_k05lx")
+texture_over = ExtResource("5_a6s0i")
+texture_progress = ExtResource("6_113pl")

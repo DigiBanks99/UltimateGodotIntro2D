@@ -1,0 +1,12 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://wke537phcc1j"]
+
+[ext_resource type="FontFile" uid="uid://cl0brqmpabvjl" path="res://resources/graphics/ui/subatomic.tsoonami.ttf" id="1_5x28o"]
+
+[resource]
+default_font = ExtResource("1_5x28o")
+default_font_size = 24
+HBoxContainer/constants/separation = 8
+MarginContainer/constants/margin_bottom = 8
+MarginContainer/constants/margin_left = 8
+MarginContainer/constants/margin_right = 8
+MarginContainer/constants/margin_top = 8
